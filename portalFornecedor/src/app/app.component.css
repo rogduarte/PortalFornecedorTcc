@@ -1,0 +1,18 @@
+.top-container {
+    margin-top: 10px;
+    text-align: center;
+    
+}
+.text-top{
+    font-weight: bold; 
+    font-size: 25px;
+    color: aliceblue;
+    text-shadow: 
+    -2px -2px 1px black, 
+    -2px 2px 1px black,      
+     2px -2px 1px black,    
+     2px 1px 1px black;
+}
+.grid-container {
+    text-align: center;
+}

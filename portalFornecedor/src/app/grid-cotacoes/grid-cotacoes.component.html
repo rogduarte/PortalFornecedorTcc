@@ -1,0 +1,65 @@
+<po-table
+  [p-auto-collapse]="true"
+  [p-columns]="columns"
+  [p-hide-columns-manager]="true"
+  [p-items]="items"
+  [p-sort]="true"
+  [p-striped]="true"
+  [p-height]="450"
+>
+  <ng-template
+    p-table-row-template
+    let-rowItem
+    let-i="rowIndex"
+    [p-table-row-template-show]="isNaoPrecificada"
+    p-table-cell-template 
+  >
+  
+    <po-widget p-title="Cotação numero: {{ rowItem.cotacao }}">
+      <po-widget>
+        <div class="po-row">
+          <div class="po-xl-6 po-lg-6 po-md-6 po-sm-6">Emissão: 30/11/2022</div>
+          <div class="po-xl-6 po-lg-6 po-md-6 po-sm-6">Validade: 20/12/2022</div>
+        </div>
+      </po-widget>
+      <app-grid-itens></app-grid-itens>
+      
+      <div class="po-row">
+        
+        <po-input class="po-md-2" name="input" p-label="Valor Seguro" > </po-input>
+        <po-input class="po-md-2" name="input" p-label="Despesa"> </po-input>
+        <po-input class="po-md-2" name="input" p-label="Valor Frete"> </po-input>
+        <po-select
+          class="po-md-2"
+          p-label="Tipo de Frete"
+          [p-options]="freightOptions"
+        >
+        </po-select>
+        <po-select
+          class="po-md-2"
+          p-label="Origem Frete"
+          [p-options]="freightOrigin"
+        >
+        </po-select>
+        
+        
+        
+      </div>
+      <po-button p-kind="secundary" class="po-md-2" p-label="Salvar" (p-click)="onClick()"> </po-button>
+    </po-widget>
+  </ng-template>
+</po-table>
+
+<po-divider></po-divider>
+
+<div class="po-row">
+  <po-button p-kind="primary" class="po-md-3" p-icon="fa fa-check-circle" p-label="Refresh">
+  </po-button>
+  <po-button
+    p-kind="primary"
+    class="po-md-3"
+    p-label="Atualiza Cotações"
+    p-icon="fa fa-check-circle"
+  >
+  </po-button>
+</div>
